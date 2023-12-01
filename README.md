@@ -1,6 +1,6 @@
-# Advent of Code 2023 Solutions in Go
+# Advent of Code Solutions in Go
 
-This repository contains my solutions to the [Advent of Code 2023](https://adventofcode.com/2023) challenges, written in Go. The Advent of Code is an annual set of Christmas-themed programming puzzles that cover a variety of skill sets and challenge types.
+This repository contains my solutions to the [Advent of Code](https://adventofcode.com) challenges, written in Go. The Advent of Code is an annual set of Christmas-themed programming puzzles that cover a variety of skill sets and challenge types.
 
 ## About Advent of Code
 
