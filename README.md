@@ -14,7 +14,7 @@ Advent of Code is an annual December event where programmers of all skill levels
 
 ## Structure of the Repository
 
-Each day's challenge is in its own directory, named in the format `dayXX` where `XX` is the day number. For example, the solution for Day 1 is in the `day01` directory.
+Each day's challenge is in its own directory, named in the format `dayXX` where `XX` is the day number. For example, the solution for Day 1 is in the `day1` directory.
 
 
 ## Running the Solutions
