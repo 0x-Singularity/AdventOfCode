@@ -22,7 +22,7 @@ func main () {
     return
   }
 
-  floorLevel, upAFloor, downAFloor := 0, 0, 0
+  floorLevel, upAFloor, downAFloor, position := 0, 0, 0, 0
 
   content := string(data)
 
@@ -33,10 +33,14 @@ func main () {
     case ')':
       downAFloor++
   }
+  floorLevel = upAFloor - downAFloor
+  position++
+
+  if (floorLevel == -1){
+    fmt.Println(position)
+    break
+  }
 }
 
-  floorLevel = upAFloor - downAFloor
-
-  fmt.Println(floorLevel)
-
+  
 }
