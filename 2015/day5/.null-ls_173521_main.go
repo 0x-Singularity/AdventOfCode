@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strings"
 )
@@ -24,7 +25,7 @@ func countVowels(word string) int {
 func doubleLetter(word string) bool {
   foundDoubleLetter := false
   for i := 1; i < len(word); i++{
-    if word[i] == word[i - 1]{
+    if line[i] == line[i - 1]{
       foundDoubleLetter = true
       break
     }
@@ -34,7 +35,7 @@ func doubleLetter(word string) bool {
 
 func doesNotContain(word string) bool {
   for _, sub := range []string{"ab", "cd", "pq", "xy"} {
-  if strings.Contains(word, sub){
+  if strings.Contains(str, sub){
     return true
    }
  }
@@ -61,7 +62,10 @@ func main () {
     if vowelCount >= 3 && doubleLet && !containsSub{
      goodWords++
     }
-   }
-   fmt.Println(goodWords)
+    }
   }
 
+fmt.Println(goodWords)
+  
+
+}
