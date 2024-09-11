@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 )
-
+//comment to test git
 func main() {
 	//Open the file
 	file, err := os.Open("input.txt")
