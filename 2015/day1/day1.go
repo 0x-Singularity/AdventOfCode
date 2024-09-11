@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// comment
 func main() {
 	//Open the file
 	file, err := os.Open("input.txt")
