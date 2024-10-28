@@ -1,36 +1,42 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
-	"strconv"
+  "fmt"
+  "os"
+  "strconv"
+  "bufio"
 )
 
-func main() {
-	file, err := os.Open("input.txt")
-	if err != nil {
-		fmt.Println("Error opening file", err)
-	}
-	scanner := bufio.NewScanner(file)
+func main () {
+  file, err := os.Open("input.txt")
+  if err != nil {
+    fmt.Println("Error opening file", err)
+  }
 
-	depthsSlice := []int{}
-	depthIncreaseNumber := 0
+  scanner := bufio.NewScanner(file)
 
-	for scanner.Scan() {
-		line := scanner.Text()
-		depth, err := strconv.Atoi(line)
-		if err != nil {
-			fmt.Println("Error converting the depths to integers", err)
-			continue
-		}
-		depthsSlice = append(depthsSlice, depth)
-	}
+  depthSlice := []int {}
 
-	for i := 1; i < len(depthsSlice); i++ {
-		if depthsSlice[i] > depthsSlice[i-1] {
-			depthIncreaseNumber++
-		}
-	}
-	fmt.Println(depthIncreaseNumber)
+
+  for scanner.Scan(){
+    line := scanner.Text()
+    depth,err := strconv.Atoi(line)
+    if err != nil {
+      fmt.Println("Error converting data to integers", err)
+    }
+      depthSlice = append(depthSlice, depth)
+  }
+
+  fmt.Println(calculateDepthIncreaseNumber(depthSlice))
 }
+
+func calculateDepthIncreaseNumber(depthSlice []int) int{
+  numberOfIncrease := 0
+  for i := 1; i < len(depthSlice); i++ {
+    if depthSlice[i] > depthSlice[i - 1]{
+      numberOfIncrease++
+    }
+  } 
+  return numberOfIncrease
+}
+

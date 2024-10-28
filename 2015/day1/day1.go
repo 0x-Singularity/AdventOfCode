@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"io"
-	"os"
+  "fmt"
+  "os"
+  "io"
 )
 
+<<<<<<< HEAD
 func main() {
 	//Open the file
 	file, err := os.Open("input.txt")
@@ -14,31 +15,38 @@ func main() {
 		return
 	}
 	defer file.Close()
+=======
+func main () {
+  file, err := os.Open("input.txt")
+  if err != nil {
+    fmt.Println("Error opening the file", err)
+  }
+>>>>>>> 3c09dc343d05e50b596a5ce5b2fab37c473fc588
 
-	data, err := io.ReadAll(file)
-	if err != nil {
-		fmt.Println("Error reading file: ", err)
-		return
-	}
+  data, err := io.ReadAll(file)
+  if err != nil {
+    fmt.Println("Error reading the data", err)
+  }
 
-	floorLevel, upAFloor, downAFloor, position := 0, 0, 0, 0
+  content := string(data)
 
-	content := string(data)
+  calculateBasementEntrance(content)
+}
 
-	for _, char := range content {
-		switch char {
-		case '(':
-			upAFloor++
-		case ')':
-			downAFloor++
-		}
-		floorLevel = upAFloor - downAFloor
-		position++
+func calculateBasementEntrance (content string) {
+  position, currentFloor := 0,0
 
-		if floorLevel == -1 {
-			fmt.Println(position)
-			break
-		}
-	}
-
+  for _, char := range content {
+    switch char {
+    case '(':
+      currentFloor++
+    case ')':
+      currentFloor--
+    }
+    position++
+    if currentFloor == -1 {
+      fmt.Println(position)
+      break;
+    }
+  } 
 }
