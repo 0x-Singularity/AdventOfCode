@@ -28,8 +28,10 @@ func main() {
 
 	for i := 0; i < len(lines); i++ {
 		for j := i + 1; j < len(lines); j++ {
-			if lines[i]+lines[j] == target {
-				fmt.Println(lines[i] * lines[j])
+			for k := j + 1; k < len(lines); k++ {
+				if lines[i]+lines[j]+lines[k] == target {
+					fmt.Println(lines[i] * lines[j] * lines[k])
+				}
 			}
 		}
 	}
