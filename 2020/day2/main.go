@@ -24,21 +24,17 @@ func main() {
 
 		parts := strings.Split(line, " ")
 		character := parts[1][0]
-		numberOfInstances := strings.Split(parts[0], "-")
-		minNumberOfInstances, _ := strconv.Atoi(numberOfInstances[0])
-		maxNumberOfInstances, _ := strconv.Atoi(numberOfInstances[1])
+		numberPositions := strings.Split(parts[0], "-")
+		firstNumberPosition, _ := strconv.Atoi(numberPositions[0])
+		firstNumberPosition = firstNumberPosition - 1
+		secondNumberPosition, _ := strconv.Atoi(numberPositions[1])
+		secondNumberPosition = secondNumberPosition - 1
 
 		passwordToSearch := parts[2]
-		numberOfOccurences := 0
 
-		for i := 0; i < len(passwordToSearch); i++ {
-			if passwordToSearch[i] == character {
-				numberOfOccurences++
-			}
-		}
-		if numberOfOccurences >= minNumberOfInstances && numberOfOccurences <= maxNumberOfInstances {
+		if (passwordToSearch[firstNumberPosition] == character) != (passwordToSearch[secondNumberPosition] == character) {
 			validPasswords++
 		}
-		fmt.Println(validPasswords)
 	}
+	fmt.Println(validPasswords)
 }
