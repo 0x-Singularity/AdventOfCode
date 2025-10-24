@@ -25,6 +25,8 @@ func main() {
 	calculateBasementEntrance(content)
 }
 
+// Adding a comment for git push
+
 func calculateBasementEntrance(content string) {
 	position, currentFloor := 0, 0
 
